@@ -30,16 +30,20 @@ The three catalogs are all managed by a Manager class, all of which inherit from
 The five basic functions are all catalog-agnostic; they can handle any class as long as it inherits from the abstract Catalog classes (CatalogManager, CatalogNode, etc.)
 
 ## TODO
-
+### High Priority
 - [x] Redesign the LOC Manager's current method of storing valid LOC codes (a HashMap String structure) into a simpler, more efficient Tree structure.
+- [ ] Proofread the extensive CSVs that store the catalog data. Most of the information was processed using Python scripts, and contains typos or misaligned ranges, occasionally causing topics to get grouped improperly.
+- [ ] Reorganize Guess Game's result timer into a single method, possibly an animation, instead of the currently spread out structure.
+- [ ] Manage de-instantiation of catalogs. Currently, all three catalogs are loaded into RAM when the app starts. It uses about 100MB of RAM, which is managable, but only instantiating the catalog currently in use would probably be better.
+### Low Priority
 - [ ] Add more detail to the three Catalogs
 	- [ ] The Library of Congress catalog has data from FreeLCC's Outline pages, but more detail can be added from the Text pages
 	- [ ] The Dewey Decimal System catalog only stores topics for whole numbers. More detail can be added from the decimal field
 	- [ ] The Classical Author catalog could store genres that the authors are associated with, as well as more recent authors (Project Gutenberg mostly lists authors from almost 100 years ago)
-- [ ] Reorganize Guess Game's result timer into a single method, possibly an animation, instead of the currently spread out structure.
-- [ ] Proofread the extensive CSVs that store the catalog data. Most of the information was processed using Python scripts, and contains typos or misaligned ranges, occasionally causing topics to get grouped improperly.
-- [ ] Manage de-instantiation of catalogs. Currently, all three catalogs are loaded into RAM when the app starts. It uses about 100MB of RAM, which is managable, but only instantiating the catalog currently in use would probably be better.
 - [ ] Add a Library of Congress Code Finder game, where the user is awarded points for finding books in their local library that match a randomly generated Library of Congress code as closely as possible. More points would be given based on closeness to each of the four sections of the code, and the titles of any found books would be able to be recorded and viewed at a later time.
 - [ ] Add an ARG-type puzzle game? ¯\\\_(ツ)\_/¯
 - [x] Make sure any visual assets are within fair copyright usage.
 - [x] Appropriately comment code.
+### Bugs
+- [ ] Fix a Null Pointer Exception that crashes the app after it's been asleep for too long
+- [ ] Set the virtual keyboard "Enter" button to trigger the Search By Code and Search By Keyword EditTexts properly
